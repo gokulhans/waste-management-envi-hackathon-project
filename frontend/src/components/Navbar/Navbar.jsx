@@ -5,6 +5,7 @@ import { Button } from "../ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import DarkModeToggler from "../DarkModeToggler/DarkModeToggler";
 import LogoutButton from "../LogoutButton/LogoutButton";
+import { SearchIcon } from "lucide-react";
 
 const Navbar = ({ isUser, setIsUser }) => {
   return (
