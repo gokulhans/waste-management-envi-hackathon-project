@@ -13,6 +13,7 @@ import RequestBasket from "./pages/User/RequestBasket/RequestBasket";
 import BookWMS from "./pages/User/BookWMS/BookWMS";
 import EventList from "./pages/User/EventList/EventList";
 import MyProfile from "./pages/User/MyProfile/MyProfile";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   // const [isUser, setIsUser] = useState(localStorage.getItem("isUser"));
@@ -20,7 +21,7 @@ function App() {
   const [isAdmin, setIsAdmin] = useState(localStorage.getItem("isAdmin"));
   return (
     <>
-      <Toaster position="top-right" reverseOrder={false} />
+      <Toaster position="bottom-right" reverseOrder={false} />
       <div className=" dark:bg-gray-900 dark:text-gray-50">
         {/* {
         
@@ -100,6 +101,7 @@ function App() {
               </>
             )}
           </Routes>
+          <Footer />
         </div>
       </div>
     </>
