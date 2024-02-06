@@ -21,7 +21,7 @@ function App() {
   return (
     <>
       <Toaster position="top-right" reverseOrder={false} />
-      <div className="bg-blue-100 dark:bg-gray-900 dark:text-gray-50">
+      <div className=" dark:bg-gray-900 dark:text-gray-50">
         {/* {
         
         isAdmin ? (
