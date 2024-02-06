@@ -43,7 +43,7 @@ const Navbar = ({ isUser, setIsUser }) => {
                 <AvatarImage alt="User Avatar" src="/placeholder-avatar.jpg" />
                 <AvatarFallback>
                   <b>
-                    {localStorage.getItem("username").charAt(0).toUpperCase()}
+                    {localStorage.getItem("username") && localStorage.getItem("username").charAt(0).toUpperCase()}
                   </b>
                 </AvatarFallback>
               </Avatar>
