@@ -11,9 +11,9 @@ const Navbar = ({ isUser, setIsUser }) => {
     <>
       <header className="fixed top-0 left-0 flex h-16 w-full shrink-0 items-center px-4 md:px-6 z-50 bg-blue-50/70 dark:bg-gray-900/70">
         <Link className="mr-6 flex items-center" to={"/"}>
-          <MountainIcon className="h-6 w-6" />
+        <RecycleIcon className="h-6 w-6 text-green-500" />
           <span className="ml-2 text-lg font-semibold">
-            <b>Fundx</b>
+            <b>EcoTrove</b>
           </span>
         </Link>
         <div className="ml-auto flex gap-2">
@@ -77,8 +77,7 @@ function MountainIcon(props) {
     </svg>
   );
 }
-
-function SearchIcon(props) {
+function RecycleIcon(props) {
   return (
     <svg
       {...props}
@@ -92,8 +91,12 @@ function SearchIcon(props) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <circle cx="11" cy="11" r="8" />
-      <path d="m21 21-4.3-4.3" />
+      <path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5" />
+      <path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12" />
+      <path d="m14 16-3 3 3 3" />
+      <path d="M8.293 13.596 7.196 9.5 3.1 10.598" />
+      <path d="m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843" />
+      <path d="m13.378 9.633 4.096 1.098 1.097-4.096" />
     </svg>
-  );
+  )
 }

@@ -4,7 +4,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div className='w-full'>
+    <div className='w-full mt-10'>
       <LandingPage/>
     </div>
   )
