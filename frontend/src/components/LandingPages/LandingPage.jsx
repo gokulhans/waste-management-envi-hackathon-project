@@ -17,7 +17,7 @@ const LandingPage = () => {
               Start and manage a professional fundraise to attract quality accredited investors.
             </p>
             <Button className="mt-8 bg-purple-500 text-white hover:bg-purple-700 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 px-4 py-2 rounded-full w-1/3">
-                <Link to='/choose-category'>
+                <Link to='/choose-category'> 
 
               Get Started
                 </Link>
