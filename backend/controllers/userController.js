@@ -6,6 +6,29 @@ const nodemailer = require("nodemailer");
 const Bin = require("../models/bin");
 
 const userController = {
+  getAll: async (req, res) => {
+    try {
+      const users = await User.find();
+      res.json({ msg: "OK", data: users });
+    } catch (error) {
+      res
+        .status(500)
+        .json({ msg: "Error fetching users", error: error.message });
+    }
+  },
+  getAllByDistrict: async (req, res) => {
+    const district = req.params.district;
+    try {
+      const users = await User.find({ district: "calicut" });
+      console.log(users);
+      res.json({ msg: "OK", data: users });
+    } catch (error) {
+      console.log(error);
+      res
+        .status(500)
+        .json({ msg: "Error fetching occasions by district", error: error.message });
+    }
+  },
   registerUser: asyncHandler(async (req, res) => {
     console.log("This is recived from register request", req.body);
     const { firstname, lastname, email, password } = req.body;

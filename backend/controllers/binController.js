@@ -17,7 +17,21 @@ const binController = {
       const bins = await Bin.find();
       res.json({ msg: "OK", data: bins });
     } catch (error) {
-      res.status(500).json({ msg: "Error fetching bins", error: error.message });
+      res
+        .status(500)
+        .json({ msg: "Error fetching bins", error: error.message });
+    }
+  },
+  getAllByDistrict: async (req, res) => {
+    const district = req.params.district;
+    try {
+      const bins = await Bin.find({ district: "calicut" });
+      res.json({ msg: "OK", data: bins });
+    } catch (error) {
+      console.log(error);
+      res
+        .status(500)
+        .json({ msg: "Error fetching bins by district", error: error.message });
     }
   },
   getById: async (req, res) => {
@@ -47,6 +61,51 @@ const binController = {
         res.status(404).json({ msg: "Bin not found" });
       }
     } catch (error) {
+      res.status(500).json({ msg: "Error updating bin", error: error.message });
+    }
+  },
+  reportById: async (req, res) => {
+    try {
+      const { isFilled } = req.body;
+      const userId = req.params.id;
+
+      // Find the bin by user ID
+      const bin = await Bin.findOne({ userid: userId });
+
+      if (!bin) {
+        return res.status(404).json({ msg: "Bin not found for the user" });
+      }
+
+      // Update the bin's isFilled status
+      bin.isFilled = isFilled;
+      bin.count = bin.count++;
+      const updatedBin = await bin.save();
+
+      res.json({ msg: "Bin updated", data: updatedBin });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ msg: "Error updating bin", error: error.message });
+    }
+  },
+  reportDoneById: async (req, res) => {
+    try {
+      const { isFilled } = req.body;
+      const Id = req.params.id;
+
+      // Find the bin by user ID
+      const bin = await Bin.findById(Id);
+
+      if (!bin) {
+        return res.status(404).json({ msg: "Bin not found for the user" });
+      }
+
+      // Update the bin's isFilled status
+      bin.isFilled = isFilled;
+      const updatedBin = await bin.save();
+
+      res.json({ msg: "Bin updated", data: updatedBin });
+    } catch (error) {
+      console.error(error);
       res.status(500).json({ msg: "Error updating bin", error: error.message });
     }
   },

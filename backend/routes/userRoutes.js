@@ -4,11 +4,14 @@ const userController = require("../controllers/userController");
 
 router.post("/register", userController.registerUser);
 
+// GET all regionAdmins
+router.get("/", userController.getAll);
+
 //Login a user
 router.post("/login", userController.loginUser);
 
 //Forgot password
-router.post("/forgot-password",userController.forgotPassword)
+router.post("/forgot-password", userController.forgotPassword);
 
 //Reset password
 router.post("/reset-password/:id/:token", userController.resetPassword);
@@ -22,5 +25,6 @@ router.post("/edit/:id", userController.updateById);
 // Subscribe BY ID
 router.post("/subscribe/:id", userController.subscribeById);
 
+router.get("/regional/:district", userController.getAllByDistrict);
 
 module.exports = router;

@@ -17,4 +17,14 @@ router.put("/:id", binController.updateById);
 // DELETE bin by ID
 router.delete("/:id", binController.deleteById);
 
+router.put("/report/:id", binController.reportById);
+router.put("/report/done/:id", binController.reportDoneById);
+
+
+router.get('/regional/:district', binController.getAllByDistrict);
+
+
+// router.put("/book-service/:id", binController.reportById);
+
+
 module.exports = router;
