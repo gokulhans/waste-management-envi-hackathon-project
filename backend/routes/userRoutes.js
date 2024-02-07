@@ -2,19 +2,25 @@ const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/userController");
 
-// GET all users
-router.get("/", userController.getAll);
+router.post("/register", userController.registerUser);
 
-// GET user by ID
-router.get("/:id", userController.getById);
+//Login a user
+router.post("/login", userController.loginUser);
 
-// POST a new user
-router.post("/", userController.create);
+//Forgot password
+router.post("/forgot-password",userController.forgotPassword)
 
-// UPDATE user by ID
-router.put("/:id", userController.updateById);
+//Reset password
+router.post("/reset-password/:id/:token", userController.resetPassword);
 
-// DELETE user by ID
-router.delete("/:id", userController.deleteById);
+// GET User BY ID
+router.get("/edit/:id", userController.getUserByID);
+
+// GET User BY ID
+router.post("/edit/:id", userController.updateById);
+
+// Subscribe BY ID
+router.post("/subscribe/:id", userController.subscribeById);
+
 
 module.exports = router;
