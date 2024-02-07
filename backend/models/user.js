@@ -1,32 +1,57 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
-const userSchema = new Schema(
+const userSchema = mongoose.Schema(
   {
-    name: {
+    
+    firstname: {
       type: String,
-      required: true,
+      required: [true, "Please add the firstname"],
+    },
+    lastname: {
+      type: String,
+      required: [true, "Please add the lastname"],
     },
     email: {
       type: String,
-      required: true,
-      unique: true,
+      required: [true, "Please add the email"],
+      unique: [true, "email already registerd"],
+    },
+    district: {
+      type: String,
+      default: "",
+    },
+    pincode: {
+      type: String,
+      default: "",
+    },
+    address: {
+      type: String,
+      default: "",
+    },
+    phone: {
+      type: String,
+      default: "",
     },
     password: {
       type: String,
+      required: [true, "Please add the password"],
     },
-    photoURL: {
-      type: String,
+    isRegionalAdmin: {
+      type:Boolean,
+      default: false,
     },
-    googleId: {
-      type: String,
+    isAdmin: {
+      type:Boolean,
+      default: false,
     },
-    isBlocked: {
-      type: Boolean,
-      default: false, // Default value is set to false, indicating the user is not blocked initially
+    isSubscribed: {
+      type:Boolean,
+      default: false,
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+  }
 );
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("Users", userSchema);
