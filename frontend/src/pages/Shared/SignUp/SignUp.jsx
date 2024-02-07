@@ -58,6 +58,7 @@ const SignUp = ({ setIsUser }) => {
 
   const onSubmit = (data) => {
     setIsLoading(true);
+    console.log(data);
     mutateAsync(data);
   };
 

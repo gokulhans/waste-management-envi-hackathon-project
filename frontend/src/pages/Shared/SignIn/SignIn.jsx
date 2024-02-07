@@ -36,7 +36,7 @@ const SignIn = ({ setIsUser }) => {
       return axiosClient.post("/user/login", data);
     },
     onSuccess: (data) => {
-      toast.success("SignIn Success!");
+      toast.success("Profile Updated...");
       const { username, id, token, email } = data.data;
       localStorage.setItem("isUser", true);
       localStorage.setItem("id", id);
@@ -55,6 +55,7 @@ const SignIn = ({ setIsUser }) => {
 
   const onSubmit = async (data) => {
     setIsLoading(true);
+    console.log(data);
     mutateAsync(data);
   };
 

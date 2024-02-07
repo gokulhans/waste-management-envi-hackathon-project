@@ -111,6 +111,14 @@ const LandingPage = () => {
                 <p className="text-2xl font-bold text-gray-800 dark:text-gray-200 mt-4">$499.99/year</p>
               </div>
             </div>
+            <div className="flex justify-center mt-6">
+              <Button className="px-8 py-2 text-lg font-semibold text-white bg-green-500 hover:bg-green-600">
+                <Link to='/subscribe'>
+
+                Subscribe
+                </Link>
+              </Button>
+            </div>
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-900">
@@ -137,20 +145,7 @@ const LandingPage = () => {
           </div>
         </section>
       </main>
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 Waste Management Inc. All rights reserved.</p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-xs hover:underline underline-offset-4 text-gray-700 dark:text-gray-300" href="#">
-            Terms of Service
-          </Link>
-          <Link className="text-xs hover:underline underline-offset-4 text-gray-700 dark:text-gray-300" href="#">
-            Privacy
-          </Link>
-          <Link className="text-xs hover:underline underline-offset-4 text-gray-700 dark:text-gray-300" href="#">
-            Site Map
-          </Link>
-        </nav>
-      </footer>
+
     </div>
 
   )
